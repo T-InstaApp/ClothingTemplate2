@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <color name="prime_dark">#FE036A</color>
+    <color name="prime">#F5347F</color>
+    <color name="red">#FF0000</color>
+    <color name="prime_light">#F65593</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="text">#000000</color>
+    <color name="main_heading">#fff</color>
+    <color name="heading">@color/prime_dark</color>
+    <color name="semi_transparent">#BF000000</color>
+    <color name="semi_background">#F8F7F7</color>
+    <color name="item_text_grey">#4C4B4B</color>
+    <color name="light_grey">#BAB8B8</color>
+
+
+
+</resources>

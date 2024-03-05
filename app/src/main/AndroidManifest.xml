@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:name=".Application"
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:hardwareAccelerated="true"
+        android:icon="@drawable/clothing_icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.ClothingTemplate1"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".ui.activity.AbutUsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ContactUsActivity"
+            android:exported="false" />
+
+        <meta-data
+            android:name="com.razorpay.ApiKey"
+            android:value="@string/payment_gatwat_key" />
+
+        <activity
+            android:name=".ui.activity.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ZoomImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.GuestLoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.RegistrationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.TrackingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.PlaceOrderActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.CheckOutActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.AddBillingAddressActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ProductDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.ShowAllProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.activity.MenCategoryActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.SplashScreen"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

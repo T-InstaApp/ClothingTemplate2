@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" /><!--For Visibility-->
+        <variable
+            name="menuData"
+            type="com.instaapp.clothingtemplate1.dataModel.SubCategoryDataModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_3sdp"
+        android:layout_marginVertical="@dimen/_3sdp"
+        android:elevation="@dimen/_6sdp"
+        app:cardCornerRadius="@dimen/_6sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_120sdp">
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150sdp"
+                android:contentDescription="@string/content_description"
+                android:scaleType="fitXY"
+                android:src="@drawable/tshirt"
+                app:imageSquare="@{menuData.product_url}" />
+
+            <TextView
+                android:id="@+id/txtCategoryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:background="@color/semi_transparent"
+                android:fontFamily="@font/nunito_semibold"
+                android:gravity="center_horizontal"
+                android:paddingHorizontal="@dimen/_20sdp"
+                android:text="@{menuData.sub_category}"
+                android:textColor="@color/white"
+                android:textSize="@dimen/heading" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

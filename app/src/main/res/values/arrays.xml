@@ -1,0 +1,6 @@
+<resources>
+    <array name="default_price_range">
+        <item>100</item> <!-- Default minimum price -->
+        <item>10000</item> <!-- Default maximum price -->
+    </array>
+</resources>

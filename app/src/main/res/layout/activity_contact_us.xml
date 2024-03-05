@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="contactUSData"
+            type="com.instaapp.clothingtemplate1.dataModel.AboutUs" />
+    </data>
+
+    <LinearLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.activity.ContactUsActivity">
+
+        <include
+            android:id="@+id/toolbar"
+            layout="@layout/toolbar" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/nunito_bold"
+            android:gravity="center_horizontal"
+            android:text="Feel free to drop us a message"
+            android:textAllCaps="true"
+            android:textColor="@color/prime_dark"
+            android:textSize="@dimen/_12sdp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Email"
+            app:endIconCheckable="false"
+            app:endIconMode="custom"
+            app:endIconTint="@color/black"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etUsername"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/nunito_regular"
+                android:inputType="textPersonName"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:text="@{contactUSData.email}"
+                android:textSize="@dimen/_11sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Phone"
+            app:endIconCheckable="false"
+            app:endIconMode="custom"
+            app:endIconTint="@color/black"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etPhone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/nunito_regular"
+                android:inputType="textPersonName"
+                android:maxLength="25"
+                android:maxLines="1"
+                android:text="@{contactUSData.phone}"
+                android:textSize="@dimen/_11sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Address"
+            app:endIconCheckable="false"
+            app:endIconMode="custom"
+            app:endIconTint="@color/black"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:fontFamily="@font/nunito_regular"
+                android:inputType="textPersonName"
+                android:text="@{contactUSData.address+` `+contactUSData.city+` `+contactUSData.state+` `+contactUSData.zip}"
+                android:textSize="@dimen/_11sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/CustomTextInputLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="Working Hours"
+            app:endIconCheckable="false"
+            app:endIconMode="custom"
+            app:endIconTint="@color/black"
+            app:hintTextAppearance="@style/TextInputLayoutHintText">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etWorkingHour"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:focusable="false"
+                android:visibility="gone"
+                android:fontFamily="@font/nunito_regular"
+                android:inputType="textPersonName"
+                android:text="@{contactUSData.working_hours}"
+                android:textSize="@dimen/_11sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+</layout>
