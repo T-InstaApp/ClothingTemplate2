@@ -13,7 +13,7 @@ jobs:
       apk_name: SKAPP
       APK_VERSION: 1.1.46
       Company_Name: Carvana
-      email : niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com
+      email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com
 
     steps:
       - name: Restore Cache
@@ -108,19 +108,20 @@ jobs:
             ~/.gradle/caches
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
 
-      # - name: Send Email Notification
-      #   uses: dawidd6/action-send-mail@v3
-      #   with:
-      #     server_address: smtp.gmail.com
-      #     server_port: 465
-      #     username: instaapp.online@gmail.com
-      #     password: ${{ secrets.GMAIL_TOKEN }}
-      #     from: instaapp.online@gmail.com
-      #     subject: APK Build Notification
-      #     body: |
-      #       Here is the link to download the APK:
-      #       ${{ steps.upload_apk.outputs.browser_download_url }}
-      #     to: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,kumarsk9904@gmail.com
+      - name: Send Email Notification
+        if: ${{ success() }}
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          username: instaapp.online@gmail.com
+          password: ${{ secrets.GMAIL_TOKEN }}
+          from: instaapp.online@gmail.com
+          subject: APK Build Notification
+          body: |
+            Here is the link to download the APK:
+            ${{ steps.upload_apk.outputs.browser_download_url }}
+          to: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,kumarsk9904@gmail.com
 
       - name: Call API
         run: |
@@ -128,8 +129,8 @@ jobs:
           export type="Android"
           export restaurant_id="239"
           export apk_name2="${{ env.apk_name }}"
-          export company_name="${{env.Company_Name}}"
-          export email=""${{ env.email }}
+          export company_name="${{ env.Company_Name }}"
+          export email="${{ env.email }}"
           export url="${{ steps.upload_apk.outputs.browser_download_url }}"
           export API_URL="$BASE_URL/?url=$url&type=$type&restaurant_id=$restaurant_id&app_name=$apk_name2&emails=$email&compony_name=$company_name"
           echo "Uploading APK: $API_URL"
