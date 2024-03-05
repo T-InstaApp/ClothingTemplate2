@@ -11,7 +11,7 @@ jobs:
 
     env:
       apk_name: SKAPP
-      APK_VERSION: 1.1.46
+      APK_VERSION: 1.1.47
       Company_Name: Carvana
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com
 
