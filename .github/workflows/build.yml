@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      apk_name: NirajCar
+      apk_name: MyApp
       APK_VERSION: 1.1.93
       Company_Name: Carvana
       email: niraj.kumar@tissatech.com,vishal.upadhyay@tissatech.com,niraj07.k@gmail.com
